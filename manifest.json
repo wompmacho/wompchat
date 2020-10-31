@@ -1,0 +1,49 @@
+{
+  "manifest_version": 2,
+
+  "name": "🔴 LIVE CHAT",
+  "version": "1.0.0",
+  "description": "Enhances the YouTube Live Streaming experience with Emotes, Custom Styling and quality of life improvements.",
+  "icons": {
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png",
+    "512": "assets/icons/icon512.png"
+  },
+
+  "permissions": [
+    "storage",
+    "background"
+  ],
+
+
+  "options_ui": {
+    "page": "html/options.html",
+    "chrome_style": true
+  },
+  
+  "browser_action": {
+    "default_popup": "html/options.html",
+    "chrome_style": true
+  },
+  
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [ "content.js" ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+
+  "web_accessible_resources": [
+    "assets/*"
+  ]
+}
