@@ -17,7 +17,15 @@
   </head>
   <body>
 
-   <span style="display:inline-block;vertical-align: middle; margin-right: 2%;"><img src="../assets/icons/icon128.png" alt="🔴" style="height: 2.5em;"></span><span style="display:inline-block;vertical-align: middle;"><h1>Live Chat Options</h1></span>
+    <span style="display:inline-block;vertical-align: middle; margin-right: 2%;">
+      <img src="../assets/icons/icon128.png" alt="🔴" style="height: 2.5em;">
+    </span>
+    <span style="display:inline-block;vertical-align: middle;">
+      <h1>Live Chat Options</h1>
+    </span>
+    <span class="">
+      <button class="info_button" id="infoButton" >Info</button>
+    </span>
     
     <br>
     <br>
@@ -125,20 +133,26 @@
       </div>
       
       <div class="hr"></div>
-
       <h2 class="options-heading">Font Size</h2>
-      <div class="slidecontainer">
-        <input disabled type="range" min="1" max="50" value="13" class="slider option-input" id="textSizeSlider">
-      </div>
+      <span>
 
-      
-      <div class="options-table">
-        <div class="option-row">
-          <div class="option-cell"><label for="allowTextSlider"></label></div>
-          <div class="option-cell"><input disabled type="checkbox" id="allowTextSlider" class="option-input"></div>
+      </span>
+
+      <span>
+        <div class="options-table">
+          <div class="option-row">
+            <div class="slidecontainer">
+              <input disabled type="range" min="1" max="50" value="13" class="slider option-input" id="textSizeSlider">
+            </div>
+            <div class="option-cell">
+              <label for="allowTextSlider"></label>
+            </div>
+            <div class="option-cell">
+              <input disabled type="checkbox" id="allowTextSlider" class="option-input">
+            </div>
+          </div>
         </div>
-      </div>
-    
+      </span>
     <div id="save-status">&nbsp;</div>
 
     <div class="omega"></div>

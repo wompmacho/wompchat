@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "🔴 LIVE CHAT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enhances the YouTube Live Streaming experience with Emotes, Custom Styling and quality of life improvements.",
   "icons": {
     "48": "assets/icons/icon48.png",
@@ -14,7 +14,6 @@
     "storage",
     "background"
   ],
-
 
   "options_ui": {
     "page": "html/options.html",
