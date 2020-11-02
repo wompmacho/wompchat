@@ -1,0 +1,76 @@
+body
+  background-color: #1e1e1e
+  color: #ffffff
+
+.section
+  &:nth-child(1)
+    .options-heading
+      margin: 0
+
+.options-heading
+  margin: 10px 0 0 0
+
+.options-description
+  margin: 0 0 10px 0
+  opacity: 0.8
+
+table
+  border: none
+  border-spacing: 0
+  width: 100%
+  tr td
+    padding: 0
+    &:nth-child(1)
+      width: 80%
+    &:nth-child(2)
+      width: 20%
+      text-align: right
+
+.hr
+  background-color: #d1d1d1
+  height: 1px
+  margin: 10px 0
+
+#save-status
+  text-align: center
+  opacity: 0
+  transition: all 1s linear
+  &.show
+    opacity: 1
+    transition: none
+
+.options-table
+  .option-row
+    display:flex
+    flex-direction: row
+    align-items: space-between
+    justify-content: space-between
+  .option-cell
+    padding-right: 5px
+    &:last-child
+      padding-right: 0px
+
+.light-text
+  color: rgba(#000, 0.6)
+
+input[type=checkbox][disabled]
+  outline: 1px solid red
+  cursor: not-allowed
+  opacity: .9
+
+.info_button
+  display:inline-block
+  padding:0.3em 1.2em
+  margin:0 0.3em 0.3em 0
+  border-radius:2em
+  box-sizing: border-box
+  text-decoration:none
+  font-weight:300
+  color:#1e1e1e
+  text-align:center
+  margin-left: 150px
+  transition: all 0.2s
+
+.info_button:hover
+  color: red
+

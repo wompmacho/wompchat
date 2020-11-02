@@ -1,0 +1,223 @@
+@import '_chatColors.styl'
+
+.item-offset
+  //height: 100%
+
+#items 
+  // Chat user avatar
+  img.yt-img-shadow
+    //height: inherit;
+    //width: inherit;
+    //align-content: center;
+    //display: initial;
+    //border-radius: inherit;
+
+
+
+  // Owner chat messages
+  .yt-live-chat-item-list-renderer[author-type="owner"] 
+    //background: rgba(#fff, 0.1);
+    #content #author-name
+      //text-shadow: #ffd600 0px 0px 10px
+
+  // Chat user menu button (3 dot menu)
+  #menu #menu-button.yt-live-chat-text-message-renderer 
+    //padding: 5px !important
+    //width: 28px !important
+    //height: 28px !important
+
+
+    // Chat user name
+    #author-name.yt-live-chat-text-message-renderer 
+      &:after
+        //content: ' :'
+        //color: #fff
+
+
+.AuthorFix
+  #author-photo.yt-live-chat-text-message-renderer
+    img.yt-img-shadow
+      display: inline-block
+      vertical-align: middle
+      border-radius: 50%;
+      height: 1.5em;
+      width: 1.5em;
+      vertical-align: sub;
+  #content
+    display: inline-block
+    vertical-align: middle
+  #timestamp.yt-live-chat-text-message-renderer
+    font-size: 1em
+    display: inline-block 
+    vertical-align: middle
+
+.showTimeStamp
+  #timestamp.yt-live-chat-text-message-renderer
+    display: inline-block 
+
+
+.Emote
+  img
+    height: 1.75em
+    align-self: center
+    vertical-align: sub;
+    display:inline-block
+    vertical-align: middle
+
+emote_div:hover
+   background-size: 100% //100% 
+   background-color: rgba(255, 255, 255, .6)
+
+.hideElement
+  display: none !important
+
+.set-background-color-one
+  background-color: #303030 !important
+
+.set-background-color-two
+  background-color: transparent !important  
+
+.setTwitchColors
+  text-shadow: 0 0 1px #000, 0 0 2px #000 !important
+  background: #18181b !important
+  font-family: 'Roboto' !important
+  font-size: 1.3rem !important
+  line-height: 1.5em !important
+  color: #FAFAFA !important
+  #timestamp.yt-live-chat-text-message-renderer
+    display: none
+  yt-live-chat-author-chip[is-highlighted] #author-name.owner.yt-live-chat-author-chip, #author-name.owner.yt-live-chat-author-chip
+    background-color: transparent
+    color: green
+  yt-live-chat-author-chip[is-highlighted] #author-name.yt-live-chat-author-chip
+    background-color: transparent
+
+.emoteDivider
+  width: 60vw
+  border: 2px solid #d3d3d3;
+  border-radius: 5px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: auto
+  margin-right: auto
+  
+.emotePopUpText
+  margin-bottom: 2%;
+
+
+.popup
+  background-color: #202020
+  position: absolute; 
+  top: 15%
+  left: 0
+  right: 0
+  margin-left: auto
+  margin-right: auto
+  height 70%
+  width: 75%
+  z-index: 999
+  text-align: center
+  border-radius: 5px
+  border: #303030 1px solid
+  font-size: 1em
+  overflow: hidden
+  overflow-y: scroll
+  padding: 1%;
+  padding-top: 2%;
+
+.emoteButton
+  background-color:rgba(255, 255, 255, .1);
+  background-image: url("https://cdn.frankerfacez.com/emoticon/447885/4")
+  background-repeat: no-repeat
+  background-position: center
+  background-size: 80% 80%;
+  width: var(--yt-live-chat-32px-icon-button_-_width)
+  height: var(--yt-live-chat-32px-icon-button_-_height)
+  padding: var(--yt-live-chat-32px-icon-button_-_padding)
+  border-radius: 10px;
+  border: none
+  cursor: pointer
+
+.emoteButton:hover 
+  background-color:rgba(255, 255, 255, .8)
+  
+.emoteButton:focus 
+  outline:0
+
+.body_Fix
+  height: 100% !important
+  margin: 0 !important
+  overflow: hidden !important
+
+.theater_wrapper_fix
+  padding: 2px;
+  background-color: #1e1e1e;
+  position: fixed
+  z-index: 900 !important
+  height: 100vh !important
+  width: 100vw !important
+
+.movie_player_fix
+  height: 100vh;
+  position: absolute;
+  width: calc(100vw - 25vw);
+  video
+    left: 0 !important
+    top: 0 !important
+    height: 100vh !important
+    width: calc(100vw - 25vw) !important
+  #html5-video-player
+    top: 0 !important
+    width: calc(100vw - 25vw) !important
+  .ytp-title
+    color: rgba(255, 255, 255, .8) !important
+  .ytp-title-channel
+    all: unset
+  .ytp-gradient-top
+    max-width: calc(100vw - 25vw) !important
+  .ytp-chrome-bottom
+    width: calc(100vw - 25vw) !important
+    left: 0 !important
+  .html5-endscreen
+    width: calc(100vw - 25vw) !important
+  .ytp-chapter-hover-container
+    width: calc(100vw - 25vw) !important
+  .ytp-gradient-bottom
+    width: calc(100vw - 25vw) !important
+  .ytp-iv-video-content
+    width: calc(100vw - 25vw) !important
+    left: 0 !important
+  .ytp-player-content.ytp-iv-player-content
+    width: calc(100vw - 25vw) !important
+    left: -12px !important
+    bottom: 10vh !important;
+  .ytp-upnext.ytp-player-content.ytp-upnext-autoplay-paused.ytp-suggestion-set
+    width: calc(100vw - 25vw) !important
+    left: 0 !important
+  .ytp-bezel-text-hide
+    width: calc(100vw - 25vw) !important
+    left: 0 !important
+  .ytp-spinner
+    left: 40% !important
+  .ytp-cued-thumbnail-overlay
+    width: calc(100vw - 25vw) !important
+    
+.info_contents_fix
+  z-index: 901 !important
+  height: 80px
+  top: 0
+  position: absolute !important
+  width: calc(100vw - 25vw) !important
+  
+  ytd-video-primary-info-renderer
+    padding: 1rem
+    border-bottom: none
+    
+.chat_frame_fix
+  height: 100vh !important
+  width: calc(calc(100vw - 75vw) - 1px) !important;
+  position: absolute  !important
+  right: 0px  !important
+  top: 0px  !important
+  border: 1px solid #4e4e4e
+  
