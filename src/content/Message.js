@@ -12,13 +12,8 @@ class Message {
     this.parsedText = ''; // This should be fine since you can't edit/change messages
     
     this.parseText();
-
-    
-
-    //  Set Defaults
     this.setDefaultSelections();
-    
-
+  
     if(this.hasEmotes) {
       this.node.setAttribute('message-id', this.id);
       this.setHtml();
