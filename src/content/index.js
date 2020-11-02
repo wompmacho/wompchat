@@ -3,7 +3,6 @@ import ChatScroller from "./ChatScroller";
 import ChatWatcher from "./ChatWatcher";
 import RouteWatcher from "./RouteWatcher";
 
-
 import {
   isLivestream, isYoutubeGaming,
   isYoutubeEmbed, isYoutubeVanilla,
@@ -34,7 +33,6 @@ class Main {
       //  chatframe id - chatframe
       //  movieframe id - movie_player_fix
       //  dono ticker id - ticker
-
       //  player-theater-container
   }
 
@@ -58,22 +56,17 @@ class Main {
     }
   }//  end onRouteChange
 
-  init() {
+  setDefaults() {
 
-    this.chatWatcher = new ChatWatcher();
-    this.chatWatcher.init();
-    this.chatScroller = new ChatScroller();
-    this.chatScroller.init();
+    ///////////////////////////////////////////////////////////////////
 
-    setDefaults();
-    console.log("INIT");
+    // Welcome Banner
+    var welcomBanner = document.querySelector("yt-live-chat-viewer-engagement-message-renderer");
 
-  }// end init
-
-}// end main
-
-
-  function setDefaults() {
+    // Set Hide Welcome Banner
+    if (PersistentSyncStorage.data.options.hideWelcomBanner) {
+      welcomBanner.classList.add("hideElement");
+    }
 
     ///////////////////////////////////////////////////////////////////
 
@@ -85,14 +78,25 @@ class Main {
     }
 
     ///////////////////////////////////////////////////////////////////
-
   }
+
+  init() {
+
+    this.chatWatcher = new ChatWatcher();
+    this.chatWatcher.init();
+    this.chatScroller = new ChatScroller();
+    this.chatScroller.init();
+
+    this.setDefaults();
+    console.log("INIT");
+
+  }// end init
+}// end main
 
 // --- Every Frame Loaded
 PersistentSyncStorage.on("ready", () => {
   MAIN = new Main();
 });
-
 
 function checkMode(){
 
@@ -120,14 +124,12 @@ function enterTheaterMode() {
 
   const masthead_container = document.getElementById('masthead-container');
   
-  
   masthead_container.hidden = true;
   
   theater_wrapper.classList.add('theater_wrapper_fix');
   movie_player.classList.add('movie_player_fix');
   chat_frame.classList.add('chat_frame_fix');
   info_frame.classList.add('info_contents_fix');
-
 
   theater_wrapper.append(info_frame);
   theater_wrapper.append(movie_player);
@@ -152,7 +154,6 @@ function exitTheaterMode(){
 
   const masthead_container = document.getElementById('masthead-container');
 
-
   masthead_container.hidden = false;
 
   theater_wrapper.classList.remove('theater_wrapper_fix');
@@ -174,7 +175,6 @@ function theaterMode(){
 
   if(theaterButton){
 
-    
     if(document.getElementById('player-theater-container').contains(document.getElementById('player-container'))){
 
       //  for when page loads first time - check is reversed after this

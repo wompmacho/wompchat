@@ -6,8 +6,6 @@ import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 
 class ChatWatcher {
 
-  
-
   constructor() {
     this.watchChat = this.watchChat.bind(this);
     this._chatContainer = null;
@@ -26,7 +24,6 @@ class ChatWatcher {
     });
   }
 
-  
   getChatContainer() {
     // Parent of actual chat (children are messages)
     const checkForContainer = (res, rej) => {
