@@ -1,6 +1,6 @@
 {
   "name": "LiveChat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Enhances the YouTube Live Streaming experience with Emotes, Custom Styling and quality of life improvements.",
   "scripts": {
     "start": "webpack --progress --watch",
@@ -9,6 +9,10 @@
     "prod": "webpack --progress --config webpack.prod.js -p"
   },
   "author": "wompmacho",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wompmacho/live-chat.git"
+  },
   "dependencies": {
     "axios": "^0.19.0",
     "date-fns": "^1.29.0",
