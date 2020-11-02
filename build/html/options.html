@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+        body {
+          font-family: sans-serif;
+          padding: 10px;
+          width: 400px;
+        }
+
+        .hideDiv {
+            display: none;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Options</title>
+  </head>
+  <body>
+
+    <span style="display:inline-block;vertical-align: middle; margin-right: 2%;">
+      <img src="../assets/icons/icon128.png" alt="🔴" style="height: 2.5em;">
+    </span>
+    <span style="display:inline-block;vertical-align: middle;">
+      <h1>Live Chat Options</h1>
+    </span>
+    <span class="">
+      <button class="info_button" id="infoButton" >Info</button>
+    </span>
+    
+    <br>
+    <br>
+
+    <div id="optionsMenu" class="tabcontent active">
+      <div class="section">
+        <h2 class="options-heading">Emote Options</h2>
+        <div class="options-description"></div>
+
+        <div class="options-table">
+          <div class="option-row">
+            <div class="option-cell"><label for="enableBTTVEmotes">Enable BTTV - Top, Trending and Global Emotes (200+)</label></div>
+            <div class="option-cell"><input disabled type="checkbox" id="enableBTTVEmotes" class="option-input"></div>
+          </div>
+        </div>
+
+        <div class="options-table">
+          <div class="option-row">
+            <div class="option-cell"><label for="enableFrankerEmotes">Enable FrankerFacez - Top 100 emotes</label></div>
+            <div class="option-cell"><input disabled type="checkbox" id="enableFrankerEmotes" class="option-input"></div>
+          </div>
+        </div>
+
+        <div class="options-table">
+          <div class="option-row">
+            <div class="option-cell"><label for="enableTwitchEmotes">Enable Twitch - Global emotes</label></div>
+            <div class="option-cell"><input disabled type="checkbox" id="enableTwitchEmotes" class="option-input"></div>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="options-table">
+          <div class="option-row">
+            <div class="option-cell"><label for="kappaFix">Kappa Fix</label></div>
+            <div class="option-cell"><input disabled type="checkbox" id="kappaFix" class="option-input"></div>
+          </div>
+        </div>
+
+      </div>
+      
+      
+      <div class="hr"></div>
+
+      <div class="section">
+        <h2 class="options-heading">Chat Options</h2>
+        <div class="options-description"></div>
+
+        <div class="options-table">
+          <div class="option-row">
+            <div class="option-cell"><label for="setLiveChat">Make LIVE CHAT Default</label></div>
+            <div class="option-cell"><input disabled type="checkbox" id="setLiveChat" class="option-input"></div>
+          </div>
+        </div>
+
+        <div class="options-table">
+          <div class="option-row">
+            <div class="option-cell"><label for="theaterModeFix">Improved Theater Mode</label></div>
+            <div class="option-cell"><input disabled type="checkbox" id="theaterModeFix" class="option-input"></div>
+          </div>
+        </div>
+
+        <div class="options-table">
+          <div class="option-row">
+            <div class="option-cell"><label for="setTwitchColors">Twitch Styling</label></div>
+            <div class="option-cell"><input disabled type="checkbox" id="setTwitchColors" class="option-input"></div>
+          </div>
+        </div>
+
+        <div class="options-table">
+          <div class="option-row">
+            <div class="option-cell"><label for="hideAuthorIcons">Hide Author Icons</label></div>
+            <div class="option-cell"><input disabled type="checkbox" id="hideAuthorIcons" class="option-input"></div>
+          </div>
+        </div>
+
+        <div class="options-table">
+          <div class="option-row">
+            <div class="option-cell"><label for="showTimeStamp">Show TimeStamp</label></div>
+            <div class="option-cell"><input disabled type="checkbox" id="showTimeStamp" class="option-input"></div>
+          </div>
+        </div>
+
+        <div class="options-table">
+          <div class="option-row">
+            <div class="option-cell"><label for="hideWelcomBanner">Hide Welcome Banner</label></div>
+            <div class="option-cell"><input disabled type="checkbox" id="hideWelcomBanner" class="option-input"></div>
+          </div>
+        </div>
+
+        <div class="options-table">
+          <div class="option-row">
+            <div class="option-cell"><label for="alternateLineColor">Alternate Line Colors</label></div>
+            <div class="option-cell"><input disabled type="checkbox" id="alternateLineColor" class="option-input"></div>
+          </div>
+        </div>
+
+        <div class="options-table">
+          <div class="option-row">
+            <div class="option-cell"><label for="setAuthorColor">Colorful User Names</label></div>
+            <div class="option-cell"><input disabled type="checkbox" id="setAuthorColor" class="option-input"></div>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="hr"></div>
+      <h2 class="options-heading">Font Size</h2>
+      <span>
+
+      </span>
+
+      <span>
+        <div class="options-table">
+          <div class="option-row">
+            <div class="slidecontainer">
+              <input disabled type="range" min="1" max="50" value="13" class="slider option-input" id="textSizeSlider">
+            </div>
+            <div class="option-cell">
+              <label for="allowTextSlider"></label>
+            </div>
+            <div class="option-cell">
+              <input disabled type="checkbox" id="allowTextSlider" class="option-input">
+            </div>
+          </div>
+        </div>
+      </span>
+    <div id="save-status">&nbsp;</div>
+
+    <div class="omega"></div>
+
+  </div>
+    
+    <script src="../options.js"></script>
+  </body>
+</html>
+  
