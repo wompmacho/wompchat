@@ -102,16 +102,6 @@ class Message {
 
     ///////////////////////////////////////////////////////////////////
 
-    // Welcome Banner
-    var welcomBanner = document.querySelector("yt-live-chat-viewer-engagement-message-renderer");
-
-    // Set Hide Welcome Banner
-    if (PersistentSyncStorage.data.options.hideWelcomBanner) {
-      welcomBanner.classList.add("hideElement");
-    }
-
-    ///////////////////////////////////////////////////////////////////
-
     //  Checks for kappa and replaces emoji element with kappa
     if(PersistentSyncStorage.data.options.kappaFix) {
 
@@ -167,7 +157,6 @@ class Message {
       inputArea.focus();
       inputAreaLabel.innerText = "";
     });
-  
   
     ///////////////////////////////////////////////////////////////////
   
@@ -244,7 +233,5 @@ class Message {
   }
 
 }// end Message
-
-
 
 export default Message;
