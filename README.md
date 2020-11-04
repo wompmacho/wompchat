@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="443" height="592" src="/src/assets/gif/emotesMenu.gif">
+  <img width="443" height="592" src="https://cdn.jsdelivr.net/gh/wompmacho/womp/assets/gif/emotesMenu.gif">
 </p>
 
 # live-chat 
