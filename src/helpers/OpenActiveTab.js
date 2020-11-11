@@ -1,5 +1,4 @@
 
-
 /* Open new tab if tab is not already open, otherwise focus that tab */
 export default url => {
   const matchUrl = url.replace(/^(https|http)/i, '*');
@@ -11,10 +10,4 @@ export default url => {
       chrome.tabs.create({ url });
     }
   });
-
-  // for(let i = 0, tab; tab = tabs[i]; i++) {
-  //   if(tab.url && tab.url === url) {
-  //     return;
-  //   }
-  // }
 };

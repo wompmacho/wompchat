@@ -1,4 +1,3 @@
-
 const CONFIG = {
   defaultOptions: {
 
@@ -6,9 +5,9 @@ const CONFIG = {
     enableBTTVEmotes: true,
     enableFrankerEmotes: true,
     enableTwitchEmotes: true,
-    kappaFix: true,
     
     // Chat Options
+    kappaFix: true,
     theaterModeFix: false,
     setAuthorColor: false,
     showTimeStamp: false,
@@ -16,9 +15,11 @@ const CONFIG = {
     hideAuthorIcons: false,
     hideWelcomBanner: false,
     setTwitchColors: false,
-    textSizeSlider: 'inherit',
     setLiveChat: true,
     allowTextSlider: false,
+
+    // Var
+    textSizeSlider: 'inherit',
   }
 };
 

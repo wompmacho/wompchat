@@ -29,7 +29,7 @@ const ensure = () => {
       return true;
     };
 
-    chrome.tabs.create({ url: './html/welcome.html' });
+    chrome.tabs.create({ url: 'html/welcome.html' });
     chrome.runtime.onMessage.addListener(onSetupComplete);
     console.log('Setup Complete');
   });

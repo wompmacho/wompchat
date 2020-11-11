@@ -1,7 +1,5 @@
 import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
-
 import Setup from './Setup';
-
 import CONFIG from 'src/config';
 
 class Main {

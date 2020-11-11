@@ -1,6 +1,5 @@
 
 import './stylus/options.styl';
-import dateFormat from 'date-fns/format';
 import { debounce } from 'lodash';
 import PersistentSyncStorage from './helpers/PersistentSyncStorage';
 
@@ -123,7 +122,6 @@ PersistentSyncStorage.on('ready', () => {
       case 'allowTextSlider':
         input.removeAttribute('disabled');
 
-
         if(PersistentSyncStorage.data.options.allowTextSlider == true){
           textSizeSlider.disabled = false;
         }else{
@@ -149,7 +147,5 @@ PersistentSyncStorage.on('ready', () => {
 
 var infoButton = document.getElementById('infoButton');
 infoButton.addEventListener('click', function(){
-  chrome.tabs.create({ url: './html/welcome.html' });
+  chrome.tabs.create({ url: 'https://wompmacho.com/wompchat' });
 });
-
-

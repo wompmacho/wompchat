@@ -12,8 +12,6 @@
     //display: initial;
     //border-radius: inherit;
 
-
-
   // Owner chat messages
   .yt-live-chat-item-list-renderer[author-type="owner"] 
     //background: rgba(#fff, 0.1);
@@ -26,13 +24,11 @@
     //width: 28px !important
     //height: 28px !important
 
-
     // Chat user name
     #author-name.yt-live-chat-text-message-renderer 
       &:after
         //content: ' :'
         //color: #fff
-
 
 .AuthorFix
   #author-photo.yt-live-chat-text-message-renderer
@@ -55,7 +51,6 @@
   #timestamp.yt-live-chat-text-message-renderer
     display: inline-block 
 
-
 .Emote
   img
     height: 1.75em
@@ -66,16 +61,14 @@
 
 emote_div:hover
    background-size: 100% //100% 
-   background-color: rgba(255, 255, 255, .6)
+   background-color: var(--divider-color)
 
 .hideElement
   display: none !important
 
-.set-background-color-one
-  background-color: #303030 !important
-
-.set-background-color-two
-  background-color: transparent !important  
+.alternateLineColor 
+  yt-live-chat-text-message-renderer:nth-child(odd)
+    background-color:  rgba(255, 255, 255, 0.1) !important;
 
 .setTwitchColors
   text-shadow: 0 0 1px #000, 0 0 2px #000 !important
@@ -93,20 +86,20 @@ emote_div:hover
     background-color: transparent
 
 .emoteDivider
-  width: 60vw
-  border: 2px solid #d3d3d3;
+  width: 20vw
+  border: 1px solid red;
   border-radius: 5px;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin-top: 1em;
+  margin-bottom: 1em;
   margin-left: auto
   margin-right: auto
   
 .emotePopUpText
   margin-bottom: 2%;
 
-
 .popup
-  background-color: #202020
+  background-color: var(--yt-app-background)
+  color: var(--yt-live-chat-primary-text-color)
   position: absolute; 
   top: 15%
   left: 0
@@ -114,7 +107,7 @@ emote_div:hover
   margin-left: auto
   margin-right: auto
   height 70%
-  width: 75%
+  width: 100%
   z-index: 999
   text-align: center
   border-radius: 5px
@@ -139,7 +132,7 @@ emote_div:hover
   cursor: pointer
 
 .emoteButton:hover 
-  background-color:rgba(255, 255, 255, .8)
+  background-color: #4e4e4e;
   
 .emoteButton:focus 
   outline:0
@@ -220,4 +213,3 @@ emote_div:hover
   right: 0px  !important
   top: 0px  !important
   border: 1px solid #4e4e4e
-  
