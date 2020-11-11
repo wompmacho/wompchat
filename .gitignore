@@ -2,3 +2,6 @@ dev-build
 node_modules
 build
 *.psd
+*.ai
+cdn/
+artwork/

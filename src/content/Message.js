@@ -1,8 +1,6 @@
 import Emotes from './Emotes';
 import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 
-var colorNumberIndex = 0;
-
 class Message {
   constructor(messageNode) {
     this.node = messageNode;
@@ -178,11 +176,6 @@ class Message {
       
     ///////////////////////////////////////////////////////////////////
   
-    //  Set Alternate message Colors
-    if (PersistentSyncStorage.data.options.alternateLineColor) {
-      this.alternateLineColor();
-    }   
-
   }// end setDefaultSelections
 
   setAuthorColor() {
@@ -210,20 +203,6 @@ class Message {
     }    
   }
 
-  ///////////////////////////////////////////////////////////////////
-  
-  //  changes color every line
-  alternateLineColor(){
-
-      if(colorNumberIndex % 2 == 0){
-        this.node.classList.add("set-background-color-one");
-      }
-      if(colorNumberIndex % 2 !== 0){
-        this.node.classList.add("set-background-color-two");
-      }
-      colorNumberIndex++;
-  }
-  
   ///////////////////////////////////////////////////////////////////
 
   //  removes color attr

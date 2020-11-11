@@ -17,7 +17,6 @@ document.body.appendChild(theater_wrapper);
 var alreadyTheater = false;
 
 // ---
-
 class Main {
   constructor() {
     this.chatWatcher = null;
@@ -26,14 +25,6 @@ class Main {
     this.onRouteChange = this.onRouteChange.bind(this);
     this.load();
 
-    
-      //  button class - ytp-size-button ytp-button
-      //  right player controls - ytp-right-controls
-      //  player div id - ytd-player
-      //  chatframe id - chatframe
-      //  movieframe id - movie_player_fix
-      //  dono ticker id - ticker
-      //  player-theater-container
   }
 
   load() {
@@ -58,6 +49,11 @@ class Main {
 
   setDefaults() {
 
+      // Set Hide Welcome Banner
+      if (PersistentSyncStorage.data.options.alternateLineColor) {
+        document.querySelector('#items.style-scope.yt-live-chat-item-list-renderer').classList.add('alternateLineColor');
+      }
+    
     ///////////////////////////////////////////////////////////////////
 
     // Welcome Banner

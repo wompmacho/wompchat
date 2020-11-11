@@ -1,10 +1,7 @@
 
 import './stylus/options.styl';
-import dateFormat from 'date-fns/format';
 import { debounce } from 'lodash';
 import PersistentSyncStorage from './helpers/PersistentSyncStorage';
-
-
 
 //  hides element after short timeout
 const hideDebounce = debounce(ele => {
@@ -30,7 +27,6 @@ const SaveStatusEle = document.getElementById('save-status');
   SaveStatusEle.classList.add('show');
 };
 
-
 ///////////////////////////////////////////////////////////////////////////////
 
 var textSizeSlider = document.getElementById("textSizeSlider");
@@ -50,7 +46,6 @@ allowTextSlider.oninput = function(){
   }
   
 };
-
 
 const optionOnChange = (input) => {
   
@@ -108,7 +103,6 @@ const optionOnChange = (input) => {
   return onChange;
 };
 
-
 // Executed code
 const OptionInputs = document.querySelectorAll('.option-input');
 
@@ -118,11 +112,11 @@ PersistentSyncStorage.on('ready', () => {
     const inputOnChange = optionOnChange(input);
     input.addEventListener('change', inputOnChange);
 
-
     switch (input.id) {
-      case 'allowTextSlider':
-        input.removeAttribute('disabled');
 
+      case 'enableBTTVEmotes':
+        input.removeAttribute('disabled');
+        break;
 
         if(PersistentSyncStorage.data.options.allowTextSlider == true){
           textSizeSlider.disabled = false;
@@ -132,16 +126,52 @@ PersistentSyncStorage.on('ready', () => {
         break;
 
       case 'theaterModeFix':
-        // do nothing, stay disabled
         input.removeAttribute('disabled');
         break;
 
-      case 'textSizeSlider' :
-        //  do nothing
+      case 'setAuthorColor':
+        input.removeAttribute('disabled');
+        break;
+
+      case 'showTimeStamp':
+        input.removeAttribute('disabled');
+        break;
+      
+      case 'alternateLineColor' :
+        input.removeAttribute('disabled');
+      break;
+
+      case 'hideAuthorIcons' :
+        input.removeAttribute('disabled');
+        break;
+      
+      case 'hideWelcomBanner' :
+        input.removeAttribute('disabled');
+        break;
+      
+      case 'setTwitchColors' :
+        input.removeAttribute('disabled');
+        break;
+
+      case 'setLiveChat' :
+        input.removeAttribute('disabled');
+        break;
+      
+      case 'allowTextSlider' :
+        //
+        break;
+
+      case 'allowTextSlider':
+        input.removeAttribute('disabled');
+        if(PersistentSyncStorage.data.options.allowTextSlider == true){
+          textSizeSlider.disabled = false;
+        }else if(PersistentSyncStorage.data.options.allowTextSlider == false){
+          textSizeSlider.disabled = true;
+        }
         break;
 
       default:
-        input.removeAttribute('disabled');
+        // shouldn't get hete if handled
         break;
     }
   });
@@ -149,7 +179,5 @@ PersistentSyncStorage.on('ready', () => {
 
 var infoButton = document.getElementById('infoButton');
 infoButton.addEventListener('click', function(){
-  chrome.tabs.create({ url: './html/welcome.html' });
+  chrome.tabs.create({ url: 'https://wompmacho.com/wompchat' });
 });
-
-
