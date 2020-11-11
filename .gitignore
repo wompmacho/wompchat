@@ -1,7 +1,11 @@
 dev-build
 node_modules
 build
+<<<<<<< Updated upstream
 *.psd
 *.ai
 cdn/
 artwork/
+=======
+.jshintrc
+>>>>>>> Stashed changes

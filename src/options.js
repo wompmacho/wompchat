@@ -3,8 +3,6 @@ import './stylus/options.styl';
 import { debounce } from 'lodash';
 import PersistentSyncStorage from './helpers/PersistentSyncStorage';
 
-
-
 //  hides element after short timeout
 const hideDebounce = debounce(ele => {
   ele.classList.remove('show');
@@ -29,7 +27,6 @@ const SaveStatusEle = document.getElementById('save-status');
   SaveStatusEle.classList.add('show');
 };
 
-
 ///////////////////////////////////////////////////////////////////////////////
 
 var textSizeSlider = document.getElementById("textSizeSlider");
@@ -49,7 +46,6 @@ allowTextSlider.oninput = function(){
   }
   
 };
-
 
 const optionOnChange = (input) => {
   
@@ -107,7 +103,6 @@ const optionOnChange = (input) => {
   return onChange;
 };
 
-
 // Executed code
 const OptionInputs = document.querySelectorAll('.option-input');
 
@@ -117,29 +112,79 @@ PersistentSyncStorage.on('ready', () => {
     const inputOnChange = optionOnChange(input);
     input.addEventListener('change', inputOnChange);
 
-
     switch (input.id) {
-      case 'allowTextSlider':
-        input.removeAttribute('disabled');
 
+      case 'enableBTTVEmotes':
+        input.removeAttribute('disabled');
+        break;
+
+<<<<<<< Updated upstream
         if(PersistentSyncStorage.data.options.allowTextSlider == true){
           textSizeSlider.disabled = false;
         }else{
           textSizeSlider.disabled = true;
         }
+=======
+      case 'enableFrankerEmotes':
+        input.removeAttribute('disabled');
+        break;
+
+      case 'enableTwitchEmotes':
+        input.removeAttribute('disabled');
+        break;
+
+      case 'kappaFix':
+        input.removeAttribute('disabled');
+>>>>>>> Stashed changes
         break;
 
       case 'theaterModeFix':
-        // do nothing, stay disabled
         input.removeAttribute('disabled');
         break;
 
-      case 'textSizeSlider' :
-        //  do nothing
+      case 'setAuthorColor':
+        input.removeAttribute('disabled');
+        break;
+
+      case 'showTimeStamp':
+        input.removeAttribute('disabled');
+        break;
+      
+      case 'alternateLineColor' :
+        input.removeAttribute('disabled');
+      break;
+
+      case 'hideAuthorIcons' :
+        input.removeAttribute('disabled');
+        break;
+      
+      case 'hideWelcomBanner' :
+        input.removeAttribute('disabled');
+        break;
+      
+      case 'setTwitchColors' :
+        input.removeAttribute('disabled');
+        break;
+
+      case 'setLiveChat' :
+        input.removeAttribute('disabled');
+        break;
+      
+      case 'allowTextSlider' :
+        //
+        break;
+
+      case 'allowTextSlider':
+        input.removeAttribute('disabled');
+        if(PersistentSyncStorage.data.options.allowTextSlider == true){
+          textSizeSlider.disabled = false;
+        }else if(PersistentSyncStorage.data.options.allowTextSlider == false){
+          textSizeSlider.disabled = true;
+        }
         break;
 
       default:
-        input.removeAttribute('disabled');
+        // shouldn't get hete if handled
         break;
     }
   });
