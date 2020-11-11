@@ -118,24 +118,11 @@ PersistentSyncStorage.on('ready', () => {
         input.removeAttribute('disabled');
         break;
 
-<<<<<<< Updated upstream
         if(PersistentSyncStorage.data.options.allowTextSlider == true){
           textSizeSlider.disabled = false;
         }else{
           textSizeSlider.disabled = true;
         }
-=======
-      case 'enableFrankerEmotes':
-        input.removeAttribute('disabled');
-        break;
-
-      case 'enableTwitchEmotes':
-        input.removeAttribute('disabled');
-        break;
-
-      case 'kappaFix':
-        input.removeAttribute('disabled');
->>>>>>> Stashed changes
         break;
 
       case 'theaterModeFix':

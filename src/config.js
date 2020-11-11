@@ -18,11 +18,7 @@ const CONFIG = {
     setLiveChat: true,
     allowTextSlider: false,
 
-<<<<<<< Updated upstream
     // Var
-=======
-    //  Variables
->>>>>>> Stashed changes
     textSizeSlider: 'inherit',
   }
 };

@@ -29,11 +29,7 @@ const ensure = () => {
       return true;
     };
 
-<<<<<<< Updated upstream
     chrome.tabs.create({ url: 'html/welcome.html' });
-=======
-    chrome.tabs.create({ url: 'https://wompmacho.com/wompchat' });
->>>>>>> Stashed changes
     chrome.runtime.onMessage.addListener(onSetupComplete);
     console.log('Storage Setup Complete, Linking User To Welcome Page.');
   });
