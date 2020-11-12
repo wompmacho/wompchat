@@ -23,7 +23,8 @@ module.exports = {
     content: './content/',
     background: './background/',
     options: './options.js',
-    welcomePage: './welcomePage.js'
+    welcomePage: './welcomePage.js',
+    chat_overlay: './chat_overlay.js'
 
   },
   output: {

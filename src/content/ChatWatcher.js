@@ -2,8 +2,6 @@ import Emotes from './Emotes';
 import Message from './Message';
 import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 
-
-
 class ChatWatcher {
 
   constructor() {
@@ -14,7 +12,6 @@ class ChatWatcher {
   }
 
   init() {
-
     return new Promise((res, rej) => {
       this.getChatContainer().then(Emotes.init).then(() => {
         this.addEmotePopup();
@@ -53,8 +50,6 @@ class ChatWatcher {
     this._observer = new MutationObserver(mutations => {
 
       mutations.forEach(mutation => {
-
-        
 
         const { addedNodes, removedNodes } = mutation;
         
@@ -185,8 +180,6 @@ class ChatWatcher {
       keysITer = Array.from(Emotes.twitch_Dictionary.keys());
       emoteAppend(keysITer);
     }
-
- 
 
     //  add div to doc
     chatButtonSelectionList.appendChild(popUpDiv);

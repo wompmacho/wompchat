@@ -181,3 +181,8 @@ var infoButton = document.getElementById('infoButton');
 infoButton.addEventListener('click', function(){
   chrome.tabs.create({ url: 'https://wompmacho.com/wompchat' });
 });
+
+var chat_overlay = document.getElementById('chat_overlay');
+chat_overlay.addEventListener('click', function(){
+  chrome.tabs.create({ url: 'html/chat_overlay.html' });
+});
