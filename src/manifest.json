@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "WompChat",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Enhances the YouTube Live Streaming experience with Emotes, Custom Styling and quality of life improvements.",
   "icons": {
     "128": "assets/icons/logo128.png"
