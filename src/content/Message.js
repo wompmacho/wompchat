@@ -202,15 +202,7 @@ class Message {
       }
     }    
   }
-
   ///////////////////////////////////////////////////////////////////
-
-  //  removes color attr
-  removelternateLineColor(){
-    this.node.classList.remove("set-background-color-one");
-    this.node.classList.remove("set-background-color-two");
-  }
-
 }// end Message
 
 export default Message;

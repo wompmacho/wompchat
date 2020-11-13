@@ -2,8 +2,6 @@ import Emotes from './Emotes';
 import Message from './Message';
 import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 
-
-
 class ChatWatcher {
 
   constructor() {
@@ -14,7 +12,6 @@ class ChatWatcher {
   }
 
   init() {
-
     return new Promise((res, rej) => {
       this.getChatContainer().then(Emotes.init).then(() => {
         this.addEmotePopup();
@@ -44,6 +41,10 @@ class ChatWatcher {
       const node = messages[i];
       if(this.isMessageNode(node)) {
         const message = new Message(node);
+     
+        // chrome.runtime.sendMessage({message: "preloadMessages", node: node.outerHTML}, function(response) {
+        //   // dont need to do anything
+        // });
       }
     }
   }
@@ -54,8 +55,6 @@ class ChatWatcher {
 
       mutations.forEach(mutation => {
 
-        
-
         const { addedNodes, removedNodes } = mutation;
         
         // Added nodes
@@ -64,6 +63,11 @@ class ChatWatcher {
             const node = addedNodes[i];
             if(this.isMessageNode(node)) {
               this.onNewMessage(node);
+       
+              // send message
+              // chrome.runtime.sendMessage({message: "newMessage", node: node.outerHTML}, function(response) {
+              //   // dont need to do anything
+              // });
             }
           }
         }
@@ -186,8 +190,6 @@ class ChatWatcher {
       emoteAppend(keysITer);
     }
 
- 
-
     //  add div to doc
     chatButtonSelectionList.appendChild(popUpDiv);
 
@@ -196,6 +198,14 @@ class ChatWatcher {
       popUpDiv.classList.toggle('hideElement');
       console.log('emote popup button clicked');
     });
+
+    // escape for popup div
+    document.onkeydown = function(evt) {
+      if (evt.key === "Escape" && !popUpDiv.classList.contains('hideElement')) {
+        popUpDiv.classList.toggle('hideElement');
+        return;
+      }
+  };
 
     //  get input area
     var inputArea = document.querySelector('#input.yt-live-chat-text-input-field-renderer');
@@ -218,6 +228,7 @@ class ChatWatcher {
     }
 
     console.log((keysITer.length+1) + " Emotes Added");
+
   }// end addEmotePopup
 
   ///////////////////////////////////////////////////////////////////

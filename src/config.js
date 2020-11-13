@@ -17,6 +17,7 @@ const CONFIG = {
     setTwitchColors: false,
     setLiveChat: true,
     allowTextSlider: false,
+    setGreenScreen: false,
 
     // Var
     textSizeSlider: 'inherit',
