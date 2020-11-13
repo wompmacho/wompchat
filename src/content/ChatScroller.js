@@ -29,7 +29,7 @@ class ChatScroller {
   }
   
   scroll() {
-    this.scroller.scrollIntoView({block: 'end'});
+    this.scroller.scrollTo(0, 9999);
   }
 
   getScroller() {
