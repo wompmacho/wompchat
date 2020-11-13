@@ -113,16 +113,20 @@ PersistentSyncStorage.on('ready', () => {
     input.addEventListener('change', inputOnChange);
 
     switch (input.id) {
-
       case 'enableBTTVEmotes':
         input.removeAttribute('disabled');
         break;
 
-        if(PersistentSyncStorage.data.options.allowTextSlider == true){
-          textSizeSlider.disabled = false;
-        }else{
-          textSizeSlider.disabled = true;
-        }
+      case 'enableFrankerEmotes':
+        input.removeAttribute('disabled');
+        break;
+
+      case 'enableTwitchEmotes':
+        input.removeAttribute('disabled');
+        break;
+
+      case 'kappaFix':
+        input.removeAttribute('disabled');
         break;
 
       case 'theaterModeFix':
@@ -156,10 +160,6 @@ PersistentSyncStorage.on('ready', () => {
       case 'setLiveChat' :
         input.removeAttribute('disabled');
         break;
-      
-      case 'allowTextSlider' :
-        //
-        break;
 
       case 'allowTextSlider':
         input.removeAttribute('disabled');
@@ -168,6 +168,10 @@ PersistentSyncStorage.on('ready', () => {
         }else if(PersistentSyncStorage.data.options.allowTextSlider == false){
           textSizeSlider.disabled = true;
         }
+        break;
+
+      case 'setGreenScreen':
+        input.removeAttribute('disabled');
         break;
 
       default:
@@ -182,7 +186,7 @@ infoButton.addEventListener('click', function(){
   chrome.tabs.create({ url: 'https://wompmacho.com/wompchat' });
 });
 
-var chat_overlay = document.getElementById('chat_overlay');
-chat_overlay.addEventListener('click', function(){
-  chrome.tabs.create({ url: 'html/chat_overlay.html' });
-});
+// var chat_overlay = document.getElementById('chat_overlay');
+// chat_overlay.addEventListener('click', function(){
+//   chrome.tabs.create({ url: 'html/chat_overlay.html' });
+// });

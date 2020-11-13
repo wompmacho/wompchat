@@ -1,9 +1,6 @@
 import Emotes from './Emotes';
 import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 
-let chat_overlay_enabled = false;
-
-
 class Message {
   constructor(messageNode) {
     this.node = messageNode;
@@ -20,10 +17,6 @@ class Message {
       this.setHtml();
       this.watch();
     }
-
-    chrome.runtime.sendMessage({message: "messageNode", node: messageNode.outerHTML}, function(response) {
-      // dont need to do anything
-    });
   }
 
   get textNode() {

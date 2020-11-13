@@ -74,6 +74,14 @@ class Main {
     }
 
     ///////////////////////////////////////////////////////////////////
+
+    //Live Chat Default Option
+    if (PersistentSyncStorage.data.options.setGreenScreen) {
+      var chat = document.querySelector('yt-live-chat-item-list-renderer');
+      chat.classList.add('green_sceen');
+    } else {
+      // do nothing, let user pick option if not set as default in options menu
+    }
   }
 
   init() {

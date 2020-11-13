@@ -105,6 +105,10 @@ class Emotes {
         url = urls[1];
       }
 
+      //  fix for overlay, remove "//" at start of url 
+      var protocol = "https:";
+      url = protocol.concat(url);
+
       this.dictionary.set(name, new Emote({ code: name, url }));
       this.franker_Dictionary.set(name, new Emote({ code: name, url }));
     }

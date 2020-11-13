@@ -41,6 +41,10 @@ class ChatWatcher {
       const node = messages[i];
       if(this.isMessageNode(node)) {
         const message = new Message(node);
+     
+        // chrome.runtime.sendMessage({message: "preloadMessages", node: node.outerHTML}, function(response) {
+        //   // dont need to do anything
+        // });
       }
     }
   }
@@ -59,6 +63,11 @@ class ChatWatcher {
             const node = addedNodes[i];
             if(this.isMessageNode(node)) {
               this.onNewMessage(node);
+       
+              // send message
+              // chrome.runtime.sendMessage({message: "newMessage", node: node.outerHTML}, function(response) {
+              //   // dont need to do anything
+              // });
             }
           }
         }
@@ -190,6 +199,14 @@ class ChatWatcher {
       console.log('emote popup button clicked');
     });
 
+    // escape for popup div
+    document.onkeydown = function(evt) {
+      if (evt.key === "Escape" && !popUpDiv.classList.contains('hideElement')) {
+        popUpDiv.classList.toggle('hideElement');
+        return;
+      }
+  };
+
     //  get input area
     var inputArea = document.querySelector('#input.yt-live-chat-text-input-field-renderer');
     var inputAreaLabel = document.querySelector('#label.yt-live-chat-text-input-field-renderer');
@@ -211,6 +228,7 @@ class ChatWatcher {
     }
 
     console.log((keysITer.length+1) + " Emotes Added");
+
   }// end addEmotePopup
 
   ///////////////////////////////////////////////////////////////////

@@ -42,22 +42,22 @@
   #content
     display: inline-block
     vertical-align: middle
-  #timestamp.yt-live-chat-text-message-renderer
-    font-size: 1em
-    display: inline-block 
-    vertical-align: middle
 
 .showTimeStamp
   #timestamp.yt-live-chat-text-message-renderer
     display: inline-block 
+    vertical-align: middle
+
 
 .Emote
+  height: 100%;
+  vertical-align: bottom;
+  
   img
     height: 1.75em
     align-self: center
-    vertical-align: sub;
     display:inline-block
-    vertical-align: middle
+    vertical-align: middle !important
 
 emote_div:hover
    background-size: 100% //100% 
@@ -213,3 +213,10 @@ emote_div:hover
   right: 0px  !important
   top: 0px  !important
   border: 1px solid #4e4e4e
+
+.green_sceen
+  background-color:  #00ff00 !important
+  font-weight: 700 !important
+  -webkit-text-stroke: 1px #000000
+  yt-live-chat-text-message-renderer:nth-child(odd)
+    background-color:  #00ff00 !important
