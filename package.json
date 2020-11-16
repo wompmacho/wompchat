@@ -1,6 +1,6 @@
 {
   "name": "WompChat",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Enhances the YouTube Live Streaming experience with Emotes, Custom Styling and quality of life improvements.",
   "scripts": {
     "start": "webpack --progress --watch",
