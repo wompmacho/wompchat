@@ -69,24 +69,29 @@ class Emotes {
   // loadEmote is where we collect an object array of emotes from bttv api
   async loadBTTVEmote(){
 
-    // top 100 emotes query = ?limit=100&offset=100
-    const bttv_top_api_url = "https://api.betterttv.net/3/emotes/shared/top?limit=100";
-    const bttv_top_api_response = await fetch(bttv_top_api_url);
-    var top_Json = await bttv_top_api_response.json();
+    try {
+      // top 100 emotes query = ?limit=100&offset=100
+      const bttv_top_api_url = "https://api.betterttv.net/3/emotes/shared/top?limit=100";
+      const bttv_top_api_response = await fetch(bttv_top_api_url);
+      var top_Json = await bttv_top_api_response.json();
 
-    // tredning emotes
-    const bttv_trending_api_url = "https://api.betterttv.net/3/emotes/shared/trending?limit=100";
-    const bttv_trending_api_response = await fetch(bttv_trending_api_url);
-    var trending_Json = await bttv_trending_api_response.json();
+      // tredning emotes
+      const bttv_trending_api_url = "https://api.betterttv.net/3/emotes/shared/trending?limit=100";
+      const bttv_trending_api_response = await fetch(bttv_trending_api_url);
+      var trending_Json = await bttv_trending_api_response.json();
 
-    // global emotes are weird, stored in seperate cache and do not give all the normal attributes
-    const bttv_global_api_url = "https://api.betterttv.net/3/cached/emotes/global";
-    const bttv_global_api_response = await fetch(bttv_global_api_url);
-    var global_Json = await bttv_global_api_response.json();
+      // global emotes are weird, stored in seperate cache and do not give all the normal attributes
+      const bttv_global_api_url = "https://api.betterttv.net/3/cached/emotes/global";
+      const bttv_global_api_response = await fetch(bttv_global_api_url);
+      var global_Json = await bttv_global_api_response.json();
 
-    this.bbtv_ToDict(top_Json);
-    this.bbtv_ToDict(trending_Json);
-    this.bbtv_cached_ToDict(global_Json);
+      this.bbtv_ToDict(top_Json);
+      this.bbtv_ToDict(trending_Json);
+      this.bbtv_cached_ToDict(global_Json);
+      
+    } catch (error) {
+      console.log('Could Not loadBTTVEmote:' + error);
+    }
   }
 
   ////////////////////////////////////////////////////////////////
@@ -117,17 +122,34 @@ class Emotes {
   // loadFrankerEmotes is where we collect an object array of emotes from franker api
   async loadFrankerEmotes(){
 
-    const franker_top_api_url = "https://api.frankerfacez.com/v1/emoticons?sort=count-desc";
+    // https://api.frankerfacez.com/v1/emoticons?sort=count-desc&page=2
     
-    const first50Response = await fetch(franker_top_api_url);
-    var first50json = await first50Response.json();
-    var next50Link = first50json._links.next;
-    const second50Response = await fetch(next50Link);
-    var second50json = await second50Response.json();
+    try {
+      var page = 1;
+      var franker_top_api_url = `https://api.frankerfacez.com/v1/emoticons?sort=count-desc&page=${page}`;
 
-    // Top 100
-    this.frankerToDict(first50json);
-    this.frankerToDict(second50json);
+      const first50Response = await fetch(franker_top_api_url);
+      var first50json = await first50Response.json();
+      //var next50Link = first50json._links.next; // api change fix
+
+      // Top 100
+      this.frankerToDict(first50json);
+    } catch (error) {
+      console.log('Could Not loadFrankerEmotes:' + error);
+    }
+
+    try {
+
+      var page = 2;
+      var next50Link = `https://api.frankerfacez.com/v1/emoticons?sort=count-desc&page=${page}`;
+      
+      const second50Response = await fetch(next50Link);
+      var second50json = await second50Response.json();
+      
+      this.frankerToDict(second50json);
+    } catch (error) {
+      console.log('Could Not loadFrankerEmotes (second):' + error);
+    }
   }
   
   ////////////////////////////////////////////////////////////////
@@ -152,10 +174,14 @@ class Emotes {
 
     // Global
     const twitch_global_api_url = "https://api.twitchemotes.com/api/v4/channels/0";
-    const twitch_global_api_response = await fetch(twitch_global_api_url);
-    var twitch_global_Json = await twitch_global_api_response.json();
 
-    this.twitchToDict(twitch_global_Json);
+    try {
+      const twitch_global_api_response = await fetch(twitch_global_api_url);
+      var twitch_global_Json = await twitch_global_api_response.json();
+      this.twitchToDict(twitch_global_Json);
+    } catch (error) {
+      console.log('Could Not load loadTwitchEmotes:' + error);
+    }
   }
 
   // ♥
