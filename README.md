@@ -1,3 +1,7 @@
+This Project is dead. 
+I recomend [7tv](https://7tv.app) as an alternative - they did a fantastic job doing what I did not have time to do.
+
+
 <p align="center">
   <img width="443" height="592" src="https://storage.googleapis.com/womp-website_cloudbuild/cdn/wompchat/gif/emotesMenu.gif">
 </p>
