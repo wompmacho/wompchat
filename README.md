@@ -1,5 +1,5 @@
 This Project is dead. 
-I recomend [7tv](https://7tv.app) as an alternative - they did a fantastic job doing what I did not have time to do.
+I recommend [7tv](https://7tv.app) as an alternative - they did a fantastic job doing what I did not have time to do.
 
 
 <p align="center">
